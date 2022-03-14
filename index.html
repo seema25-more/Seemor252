@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>German text API</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}">
+</head>
+<body>
+ <div class="login">
+     <h1 style = "font-size:60px;  color:white; text-align:center;"> Statement Prediction </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Statement" placeholder="statement" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>
